@@ -18,16 +18,20 @@ const galleryMarkup = galleryItems.map(({preview, original, description}) =>
 .join("");
 galleryRef.insertAdjacentHTML('afterbegin', galleryMarkup)
 
-galleryRef.addEventListener('click', gallerySlider);
+// galleryRef.addEventListener('click', gallerySlider);
 
-function gallerySlider (event){
-    event.preventDefault();
-    if(event.target.nodeName !== 'IMG') return;
-    let gallery = new SimpleLightbox('.gallery a', 
-    {
-        captions: true,
-        captionsData: 'alt',
-        captionDelay: 250,
-    });
+// function gallerySlider (event){
+//     event.preventDefault();
+//     if(event.target.nodeName !== 'IMG') return;
+//     let gallery = new SimpleLightbox('.gallery a', 
+//     {
+//         captions: true,
+//         captionsData: 'alt',
+//         captionDelay: 250,
+//     });
 
-}
+// }
+new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
